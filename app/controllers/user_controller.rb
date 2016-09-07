@@ -6,5 +6,6 @@ class UserController < ApplicationController
 
   post '/signup' do
     @user = User.create(params)
+    session[:id] = @user.id
   end
 end
