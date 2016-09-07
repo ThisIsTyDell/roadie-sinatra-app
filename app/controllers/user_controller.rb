@@ -13,4 +13,8 @@ class UserController < ApplicationController
       redirect to '/'
     end
   end
+
+  get '/login' do
+    erb :'user/login'
+  end
 end
