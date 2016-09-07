@@ -5,7 +5,8 @@ class UserController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.create(params)
-    session[:id] = @user.id
+    user = User.create(params)
+    session[:id] = user.id
+    redirect to '/'
   end
 end
