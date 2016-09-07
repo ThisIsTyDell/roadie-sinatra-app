@@ -1,4 +1,4 @@
-class Trucks < ActiveRecord::Migration
+class CreateTrucks < ActiveRecord::Migration
   def change
     create_table :trucks do |t|
       t.string :name
