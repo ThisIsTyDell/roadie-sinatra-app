@@ -34,7 +34,9 @@ class UserController < ApplicationController
   end
 
   get '/dashboard' do
-    erb :'users/dashboard'
+    @user = current_user
+
+    erb :'/users/show'
   end
   
 end
