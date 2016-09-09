@@ -1,0 +1,4 @@
+<h1><%= @user.username.capitalize %>'s Equipment</h1>
+<% @user.items.each do |item| %>
+  <li><%= item.name %> - Value: $<%= item.value %></li>
+<% end %>
