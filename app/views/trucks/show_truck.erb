@@ -7,3 +7,8 @@
 <% else %>
   <h2>This truck is empty</h2>
 <% end %>
+
+<form method="POST" action="/trucks/<%= @truck.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Truck">
+</form>
