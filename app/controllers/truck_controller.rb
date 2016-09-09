@@ -56,7 +56,11 @@ class TruckController < ApplicationController
 
   delete '/trucks/:id/delete' do
     truck = Truck.find_by_id(params[:id])
-    truck.delete
-    redirect '/trucks'
+    if logged_in? && current_user.id == truck.user_id
+      truck.delete
+      redirect '/trucks'
+    else
+      redirect '/login'
+    end
   end
 end
