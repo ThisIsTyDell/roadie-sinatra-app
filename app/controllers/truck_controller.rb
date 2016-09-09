@@ -44,4 +44,10 @@ class TruckController < ApplicationController
     end
   end
 
+  patch '/trucks/:id' do
+    truck = current_user.trucks.find(params[:id])
+    truck.update(name: params[:name])
+    redirect "trucks/#{truck.id}"
+  end
+
 end
