@@ -1,9 +1,8 @@
 <h1><%= @user.username.capitalize %>'s Trucks</h1>
 
-<h2>Trucks</h2>
 <% @user.trucks.each do |truck| %>
-  <h3><%= truck.name %></h3>
-  <h4>Equipment</h4>
+  <h2><%= truck.name %></h2>
+  <h3>Equipment</h3>
   <% truck.items.each do |item| %>
     <%= item.name %>: $<%= item.value %>
   <% end %>
