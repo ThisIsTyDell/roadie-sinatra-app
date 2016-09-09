@@ -1,1 +1,10 @@
 Truck
+
+<h2>Trucks</h2>
+<% @user.trucks.each do |truck| %>
+  <h3><%= truck.name %></h3>
+  <h4>Equipment</h4>
+  <% truck.items.each do |item| %>
+    <%= item.name %>: $<%= item.value %>
+  <% end %>
+<% end %>
