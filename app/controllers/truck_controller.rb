@@ -3,7 +3,7 @@ class TruckController < ApplicationController
   get '/trucks' do
     if logged_in?
       @user = current_user
-      erb :'trucks/show'
+      erb :'trucks/trucks'
     else
       redirect to '/login'
     end
