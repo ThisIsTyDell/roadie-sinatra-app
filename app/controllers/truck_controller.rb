@@ -17,4 +17,8 @@ class TruckController < ApplicationController
     end
   end
 
+  post '/trucks' do
+    binding.pry
+  end
+
 end
