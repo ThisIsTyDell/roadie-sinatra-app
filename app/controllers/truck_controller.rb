@@ -9,4 +9,12 @@ class TruckController < ApplicationController
     end
   end
 
+  get 'trucks/new' do
+    if logged_in?
+      erb :'trucks/create_truck.erb'
+    else
+      redirect '/login'
+    end
+  end
+
 end
