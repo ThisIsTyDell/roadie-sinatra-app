@@ -1,4 +1,9 @@
 <h1><%= @truck.name %></h1>
-<% @truck.items.each do |item| %>
-  <%= item.name %> - Value: $<%= item.value %>
+<% if !@truck.items.empty? %>
+  <h2>Equipment on Truck</h2>
+  <% @truck.items.each do |item| %>
+    <%= item.name %> - Value: $<%= item.value %>
+  <% end %>
+<% else %>
+  <h2>This truck is empty</h2>
 <% end %>
