@@ -26,4 +26,13 @@ class TruckController < ApplicationController
     end
   end
 
+  get '/trucks/:id' do
+    if logged_in?
+      @truck = current_user.trucks.find_by_id(params[:id])
+      erb :'trucks/show_truck'
+    else
+      redirect '/login'
+    end
+  end
+
 end
