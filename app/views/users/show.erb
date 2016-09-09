@@ -1,1 +1,6 @@
-<h1>Welcome to your equipment dashboard</h1>
+<h1>Welcome <%= @user.username %> to your equipment dashboard</h1>
+
+<h2>Trucks</h2>
+<% @user.trucks.each do |truck| %>
+  <%= truck.name %>
+<% end %>
