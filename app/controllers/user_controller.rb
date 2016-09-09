@@ -32,5 +32,9 @@ class UserController < ApplicationController
     session.clear
     redirect to '/login'
   end
+
+  get '/dashboard' do
+    erb :'users/dashboard'
+  end
   
 end
