@@ -57,5 +57,6 @@ class TruckController < ApplicationController
   delete '/trucks/:id/delete' do
     truck = Truck.find_by_id(params[:id])
     truck.delete
+    redirect '/trucks'
   end
 end
