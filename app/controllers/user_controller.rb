@@ -19,6 +19,7 @@ class UserController < ApplicationController
       erb :'users/login'
     else
       redirect '/dashboard'
+    end
   end
 
   post '/login' do
