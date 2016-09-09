@@ -18,7 +18,12 @@ class TruckController < ApplicationController
   end
 
   post '/trucks' do
-    binding.pry
+    if params[:name] != ""
+      new_truck = current_user.trucks.create(params)
+      redirect '/trucks'
+    else
+      redirect '/trucks/new'
+    end
   end
 
 end
