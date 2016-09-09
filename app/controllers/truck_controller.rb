@@ -27,8 +27,8 @@ class TruckController < ApplicationController
   end
 
   get '/trucks/:id' do
-    if logged_in?
-      @truck = Truck.find_by_id(params[:id])
+    @truck = Truck.find_by_id(params[:id])
+    if logged_in? && current_user.id == @truck.user_id
       erb :'trucks/show_truck'
     else
       redirect '/login'
