@@ -1,0 +1,17 @@
+<h1>Add Equipment</h1>
+<form>
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Value:</label>
+  <input type="number" name="value">
+  <h2>Select an Existing Truck or Create New Truck</h2>
+  <label>Select Existing Truck:</label>
+  <select>
+    <% current_user.trucks.each do |truck| %>
+      <option><%= truck.name %></option>
+    <% end %>
+  </select>
+  <label><b>or</b> Create New Truck:</label>
+  <input type="text" name="truck[:name]">
+  <input type="submit" value="Submit">
+</form>
