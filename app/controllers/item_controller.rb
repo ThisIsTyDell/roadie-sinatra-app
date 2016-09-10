@@ -18,13 +18,27 @@ class ItemController < ApplicationController
   end
 
   post '/equipment' do
-    binding.pry
-    #if params[:name] != ""
-     # new_item = current_user.trucks.create(params)
-      #redirect '/equipment'
-    #else
-    #  redirect '/equipment/new'
-    #end
+    filled_in = params[:name] != "" || params[:value] != ""
+    case params
+    when !filled_in || (filled_in && params[:truck] == "" && params[:new_truck] == "")
+      redirect '/equipment/new'
+      #raise error message to user letting them know they need to fill out the form
+    when filled_in && params[:truck] != "" && params[:new_truck] != ""
+      redirect '/equipment/new'
+      #raise error message to user letting them know they can not choose existing and create new at same time. 
+    when filled_in && params[:new_truck] == "" && params[:truck] != ""
+      #create new item and associate with existing truck
+      existing_truck = Truck.find_by(name: params[:truck])
+      new_item = existing_truck.items.create(name: params[:name], value: params[:value])
+      redirect '/equipment'
+    when filled_in && params[:truck] == "" && params[:new_truck] == ""
+      #create new item and new truck through association
+      new_truck = current_user.trucks.create(name: params[:new_truck])
+      new_item = new_truck.items.create(name: params[:name], value: params[:value])
+      redirect '/equipment'
+    else
+      redirect '/equipment/new'
+    end
   end
 
   get '/equipment/:id' do
