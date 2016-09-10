@@ -19,7 +19,7 @@ class ItemController < ApplicationController
 
   post '/equipment' do
     filled_in = params[:name] != "" || params[:value] != ""
-    case params
+    case
     when !filled_in || (filled_in && params[:truck] == "" && params[:new_truck] == "")
       redirect '/equipment/new'
       #raise error message to user letting them know they need to fill out the form
