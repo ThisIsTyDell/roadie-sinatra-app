@@ -31,7 +31,7 @@ class ItemController < ApplicationController
       existing_truck = Truck.find_by(name: params[:truck])
       new_item = existing_truck.items.create(name: params[:name], value: params[:value])
       redirect '/equipment'
-    when filled_in && params[:truck] == "" && params[:new_truck] == ""
+    when filled_in && params[:truck] == "" && params[:new_truck] != ""
       #create new item and new truck through association
       new_truck = current_user.trucks.create(name: params[:new_truck])
       new_item = new_truck.items.create(name: params[:name], value: params[:value])
