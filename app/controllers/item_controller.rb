@@ -18,12 +18,13 @@ class ItemController < ApplicationController
   end
 
   post '/equipment' do
-    if params[:name] != ""
-      new_item = current_user.trucks.create(params)
-      redirect '/equipment'
-    else
-      redirect '/equipment/new'
-    end
+    binding.pry
+    #if params[:name] != ""
+     # new_item = current_user.trucks.create(params)
+      #redirect '/equipment'
+    #else
+    #  redirect '/equipment/new'
+    #end
   end
 
   get '/equipment/:id' do

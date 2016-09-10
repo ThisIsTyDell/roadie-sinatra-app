@@ -1,13 +1,13 @@
 <h1>Add Equipment</h1>
-<form>
+<form method="POST" action="/equipment">
   <label>Name:</label>
   <input type="text" name="name">
   <label>Value:</label>
   <input type="number" name="value">
   <h2>Select an Existing Truck or Create New Truck</h2>
   <label>Select Existing Truck:</label>
-  <select>
-    <option name="truck[:name]" value="nil">No, I want to Create New Truck</option>
+  <select name="truck[:name]">
+    <option value="">No, I want to Create New Truck</option>
     <% current_user.trucks.each do |truck| %>
       <option name="truck[:name]" value="<%= truck.name %>"><%= truck.name %></option>
     <% end %>
