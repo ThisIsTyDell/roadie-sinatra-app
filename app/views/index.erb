@@ -1,3 +1,7 @@
-<h1>Roadie</h1>
-<a href="/login">Login</a>
-<a href="/signup">Signup</a>
+<h1 class="cover-heading">Roadie</h1>
+<p class="lead"><% if !!current_user %>
+  <a href="/logout" class="btn btn-lg btn-default">Logout</a>
+<% else %>
+  <a href="/login" class="btn btn-lg btn-default">Login</a>
+  <a href="/signup" class="btn btn-lg btn-default">Signup</a>
+<% end %></p>
