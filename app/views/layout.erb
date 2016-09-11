@@ -7,6 +7,7 @@
   <title>Roadie - Band Road Equipment Management</title>
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/cover.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -16,7 +17,13 @@
 
 </head>
 <body>
-  <%=yield%>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <%=yield%>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
