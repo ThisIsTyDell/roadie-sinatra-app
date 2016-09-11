@@ -1,3 +1,8 @@
 <h1><%= @item.name %></h1>
 Value: $<%= @item.value %>
 <p>This equipment is on <%= @item.truck.name %>'s Truck</p>
+
+<form method="POST" action="/equipment/<%= @item.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Equipment">
+</form>
