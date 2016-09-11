@@ -40,7 +40,7 @@ class ItemController < ApplicationController
       redirect '/equipment/new'
     end
   end
-################## GOODNIGHT - PICK UP HERE IN THE MORNING #############
+
   get '/equipment/:id' do
     @item = Item.find_by_id(params[:id])
     if logged_in? && current_user.id == @item.truck.user.id
