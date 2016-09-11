@@ -8,7 +8,6 @@
   <h2>Move item to different truck</h2>
   <label>Select Existing Truck:</label>
   <select name="truck">
-    <option value="">No, I want to Create New Truck</option>
     <% current_user.trucks.each do |truck| %>
       <option value="<%= truck.name %>" <%= 'selected' if truck.id == @item.truck_id %>>   <%= truck.name %></option>
     <% end %>
