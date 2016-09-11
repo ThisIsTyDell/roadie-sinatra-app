@@ -1,5 +1,6 @@
 <h1>Edit Equipment</h1>
-<form method="POST" action="/equipment">
+<form method="POST" action="/equipment/<%= @item.id %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <label>Name:</label>
   <input type="text" name="name" value="<%= @item.name %>">
   <label>Value:</label>
