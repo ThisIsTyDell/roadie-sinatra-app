@@ -9,7 +9,7 @@
   <label>Select Existing Truck:</label>
   <select name="truck">
     <% current_user.trucks.each do |truck| %>
-      <option value="<%= truck.name %>" <%= 'selected' if truck.id == @item.truck_id %>>   <%= truck.name %></option>
+      <option value="<%= truck.name %>"<%= 'selected' if truck.id == @item.truck_id %>><%= truck.name %></option>
     <% end %>
   </select>
   <input type="submit" value="Submit">
