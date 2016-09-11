@@ -1,18 +1,16 @@
 <h1>Edit Equipment</h1>
 <form method="POST" action="/equipment">
   <label>Name:</label>
-  <input type="text" name="name">
+  <input type="text" name="name" value="<%= @item.name %>">
   <label>Value:</label>
-  <input type="number" name="value">
-  <h2>Select an Existing Truck or Create New Truck</h2>
+  <input type="number" name="value" value="<%= @item.value %>">
+  <h2>Move item to different truck</h2>
   <label>Select Existing Truck:</label>
   <select name="truck">
     <option value="">No, I want to Create New Truck</option>
     <% current_user.trucks.each do |truck| %>
-      <option value="<%= truck.name %>"><%= truck.name %></option>
+      <option value="<%= truck.name %>" <%= 'selected' if truck.id == @item.truck_id %>>   <%= truck.name %></option>
     <% end %>
   </select>
-  <label><b>or</b> Create New Truck:</label>
-  <input type="text" name="new_truck">
   <input type="submit" value="Submit">
 </form>
