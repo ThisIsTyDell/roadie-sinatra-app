@@ -25,9 +25,15 @@
             <h3 class="masthead-brand">Roadie</h3>
             <nav>
               <ul class="nav masthead-nav">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
+                <% if !!current_user %>
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="#">Trucks</a></li>
+                  <li><a href="#">Equipment</a></li>
+                  <li><a href="#">Logout</a></li>
+                <% else %>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Signup</a></li>
+                <% end %>
               </ul>
             </nav>
             </div>
