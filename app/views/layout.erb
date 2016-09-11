@@ -20,26 +20,27 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
+        
         <div class="masthead clearfix">
           <div class="inner">
             <h3 class="masthead-brand">Roadie</h3>
             <nav>
               <ul class="nav masthead-nav">
                 <% if !!current_user %>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="#">Trucks</a></li>
-                  <li><a href="#">Equipment</a></li>
-                  <li><a href="#">Logout</a></li>
+                  <li><a href="/dashboard">Dashboard</a></li>
+                  <li><a href="/trucks">Trucks</a></li>
+                  <li><a href="/equipment">Equipment</a></li>
+                  <li><a href="/logout">Logout</a></li>
                 <% else %>
-                  <li><a href="#">Login</a></li>
-                  <li><a href="#">Signup</a></li>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/signup">Signup</a></li>
                 <% end %>
               </ul>
             </nav>
-            </div>
-              <%=yield%>
-            
           </div>
+        </div>
+        
+        <%=yield%>  
         </div>
       </div>
     </div>
