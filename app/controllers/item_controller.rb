@@ -1,5 +1,4 @@
 class ItemController < ApplicationController
-  use Rack::Flash
   
   get '/equipment' do
     if logged_in?

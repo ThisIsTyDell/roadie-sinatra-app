@@ -1,6 +1,5 @@
 class UserController < ApplicationController
-  use Rack::Flash
-  
+
   get '/signup' do
     erb :'/users/signup'
   end
