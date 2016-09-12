@@ -63,4 +63,9 @@ class TruckController < ApplicationController
       redirect '/login'
     end
   end
+
+  delete '/trucks/delete_all' do
+    current_user.trucks.delete_all
+    redirect '/profile'
+  end
 end

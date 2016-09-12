@@ -40,5 +40,11 @@ class UserController < ApplicationController
   get '/profile' do
     erb :'users/profile'
   end
+
+  delete '/profile/delete_account' do
+    current_user.destroy
+    session.clear
+    redirect to '/login'
+  end
   
 end

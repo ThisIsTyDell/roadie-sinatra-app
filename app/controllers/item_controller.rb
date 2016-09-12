@@ -78,4 +78,12 @@ class ItemController < ApplicationController
       redirect '/login'
     end
   end
+
+  delete '/equipment/delete_all' do
+    current_user.trucks.each do |truck|
+      truck.items.delete_all
+    end
+    redirect '/profile'
+  end
+
 end
