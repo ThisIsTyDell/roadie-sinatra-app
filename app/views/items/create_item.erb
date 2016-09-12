@@ -1,5 +1,7 @@
 <h1 class="page-header">Add Equipment</h1>
-
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
 <form method="POST" action="/equipment">
   <div class="form-group col-md-6">
     <label class="sr-only">Name</label>
