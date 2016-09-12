@@ -1,5 +1,6 @@
 class TruckController < ApplicationController
-  
+  use Rack::Flash
+
   get '/trucks' do
     if logged_in?
       @user = current_user

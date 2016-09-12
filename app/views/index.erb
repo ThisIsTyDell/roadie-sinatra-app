@@ -5,3 +5,7 @@
   <a href="/login" class="btn btn-lg btn-default">Login</a>
   <a href="/signup" class="btn btn-lg btn-default">Signup</a>
 <% end %></p></div>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>

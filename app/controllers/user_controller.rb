@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-
+  use Rack::Flash
+  
   get '/signup' do
     erb :'/users/signup'
   end
@@ -10,6 +11,7 @@ class UserController < ApplicationController
     else
       user = User.create(params)
       session[:user_id] = user.id
+      flash[:message] = "Successfully Created Account"
       redirect to '/'
     end
   end
