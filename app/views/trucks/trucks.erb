@@ -1,4 +1,4 @@
-<div class="page-header"><h1><%= @user.username %><small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 || 0 %>.</small></h1></div>
+<div class="page-header"><h1><%= @user.username %><small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 %>.</small></h1></div>
 
 <h2 class="pull-left">Trucks</h2>
 <div class="pull-right"><a href="/trucks/new" class="btn btn-default">Add</a></div>
@@ -9,7 +9,7 @@
 <% @user.trucks.each do |truck| %>
   <div class="col-md-6 col-xs-6">
     <h3><a href="/trucks/<%= truck.id %>"><%= truck.name %></a></h3>
-    <h3><small>Traveling with <%= truck.items.size %> item<%= 's' if truck.items.size > 1 || 0 %>. </small></h3>
+    <h3><small>Traveling with <%= truck.items.size %> item<%= 's' if truck.items.size > 1 %>. </small></h3>
   </div>
 <% end %>
 </div>
