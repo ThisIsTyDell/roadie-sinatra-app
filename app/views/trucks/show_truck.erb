@@ -3,7 +3,7 @@
 <% if !@truck.items.empty? %>
   <h2>Equipment on Truck</h2>
   <% @truck.items.each do |item| %>
-    <p class="lead"><%= item.name %> - Value: $<%= item.value %></p>
+    <p class="lead"><a href="/equipment/<%= item.id %>"><%= item.name %></a> - Value: $<%= item.value %></p>
   <% end %>
 <% else %>
   <h2>This truck is empty</h2>
