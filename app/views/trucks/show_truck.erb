@@ -1,4 +1,7 @@
 <h1 class="page-header"><%= @truck.name %></h1>
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
 <% if !@truck.items.empty? %>
   <h2>Equipment on Truck</h2>
   <% @truck.items.each do |item| %>

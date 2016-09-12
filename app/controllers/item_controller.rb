@@ -22,6 +22,7 @@ class ItemController < ApplicationController
     case
     when !filled_in || (filled_in && params[:truck] == "" && params[:new_truck] == "")
       redirect '/equipment/new'
+      flash[:message] = "Please try again by filling out the details"
       #raise error message to user letting them know they need to fill out the form
     when filled_in && params[:truck] != "" && params[:new_truck] != ""
       redirect '/equipment/new'

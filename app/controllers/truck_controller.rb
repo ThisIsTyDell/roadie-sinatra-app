@@ -20,6 +20,7 @@ class TruckController < ApplicationController
   post '/trucks' do
     if params[:name] != ""
       new_truck = current_user.trucks.create(params)
+      flash[:message] = "Successfully created a new truck."
       redirect '/trucks'
     else
       redirect '/trucks/new'
@@ -48,6 +49,7 @@ class TruckController < ApplicationController
     if params[:name] != ""
       truck = current_user.trucks.find(params[:id])
       truck.update(name: params[:name])
+      flash[:message] = "Name change successful."
       redirect "trucks/#{truck.id}"
     else
       redirect "trucks/#{params[:id]}/edit"
@@ -58,6 +60,7 @@ class TruckController < ApplicationController
     truck = Truck.find_by_id(params[:id])
     if logged_in? && current_user.id == truck.user_id
       truck.delete
+      flash[:message] = "Truck deleted successfully."
       redirect '/trucks'
     else
       redirect '/login'
@@ -66,6 +69,7 @@ class TruckController < ApplicationController
 
   delete '/trucks/delete_all' do
     current_user.trucks.delete_all
+    flash[:message] = "All trucks deleted successfully."
     redirect '/profile'
   end
 end
