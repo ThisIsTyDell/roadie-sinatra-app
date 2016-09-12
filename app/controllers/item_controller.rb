@@ -68,6 +68,7 @@ class ItemController < ApplicationController
       item = Item.find_by_id(params[:id])
       item.update(name: params[:name], value: params[:value], truck_id: params[:truck_id])
       redirect "equipment/#{item.id}"
+      flash[:message] = "Successfully updated equipment."
     else
       redirect "equipment/#{params[:id]}/edit"
     end
@@ -77,6 +78,7 @@ class ItemController < ApplicationController
     item = Item.find_by_id(params[:id])
     if logged_in? && current_user.id == item.truck.user.id
       item.delete
+      flash[:message] = "Successfully deleted."
       redirect '/equipment'
     else
       redirect '/login'
@@ -87,6 +89,7 @@ class ItemController < ApplicationController
     current_user.trucks.each do |truck|
       truck.items.delete_all
     end
+    flash[:message] = "Successfully deleted all equipment."
     redirect '/profile'
   end
 
