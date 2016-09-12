@@ -67,8 +67,8 @@ class ItemController < ApplicationController
     if params[:name] != "" && params[:value] !=""
       item = Item.find_by_id(params[:id])
       item.update(name: params[:name], value: params[:value], truck_id: params[:truck_id])
-      redirect "equipment/#{item.id}"
       flash[:message] = "Successfully updated equipment."
+      redirect "equipment/#{item.id}"
     else
       redirect "equipment/#{params[:id]}/edit"
     end
