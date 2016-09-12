@@ -1,9 +1,9 @@
 <h1 class="page-header">Edit Truck</h1>
 
-<form method="POST" action="/trucks/<%= @truck.id %>">
+<form class="form-inline" method="POST" action="/trucks/<%= @truck.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label class="lead">Tour Name or Artist Name:</label>
-  <input class="lead" type="text" name="name" value="<%= @truck.name %>">
+  <input class="form-control" type="text" name="name" value="<%= @truck.name %>">
 
   <input type="submit" value="Submit" class="btn btn-default">
 </form>
