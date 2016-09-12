@@ -21,7 +21,7 @@
     <select name="truck" class="form-control">
       <option value="">No, I want to Create New Truck</option>
       <% current_user.trucks.each do |truck| %>
-        <option value="<%= truck.name %>"><%= truck.name %></option>
+        <option value="<%= truck.id %>"><%= truck.name %></option>
       <% end %>
     </select>
   </div>

@@ -31,7 +31,7 @@ class ItemController < ApplicationController
     when filled_in && params[:new_truck] == "" && params[:truck] != ""
       #create new item and associate with existing truck
       binding.pry
-      existing_truck = Truck.find_by(name: params[:truck])
+      existing_truck = Truck.find_by_id(params[:truck])
       new_item = existing_truck.items.create(name: params[:name], value: params[:value])
       flash[:message] = "New item successfully created and placed in selected truck."
       redirect '/equipment'
