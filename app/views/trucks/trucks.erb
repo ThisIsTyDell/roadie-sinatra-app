@@ -1,6 +1,5 @@
-<div class="page-header"><h1><%= @user.username %><small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 %>.</small></h1></div>
+<div class="page-header"><h1>Trucks<small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 %>.</small></h1></div>
 
-<h2 class="pull-left">Trucks</h2>
 <div class="pull-right"><a href="/trucks/new" class="btn btn-default">Add</a></div>
  <div class="clearfix"></div>
 <%= "<p>Looks like you don't have any trucks. Click Add to Add New Truck</p>" if @user.trucks.size == 0 %>
