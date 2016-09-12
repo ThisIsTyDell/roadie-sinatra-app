@@ -4,7 +4,7 @@
 <div class="container-fluid">
 <% @user.trucks.each do |truck| %>
   <div class="col-md-3">
-    <h3><%= truck.name %></h3>
+    <h3><a href="/trucks/<%= truck.id %>"><%= truck.name %></a></h3>
     <h4>Equipment</h4>
       <% truck.items.each do |item| %>
       <%= item.name %>: $<%= item.value %>
