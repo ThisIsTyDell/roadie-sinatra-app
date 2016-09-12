@@ -29,6 +29,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect to '/trucks'
     else
+      flash[:message] = "Username or password was incorrect, please try again."
       erb :'users/login'
     end
   end
