@@ -36,5 +36,9 @@ class UserController < ApplicationController
     session.clear
     redirect to '/login'
   end
+
+  get '/profile' do
+    erb :'users/profile'
+  end
   
 end
