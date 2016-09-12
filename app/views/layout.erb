@@ -40,6 +40,9 @@
         </div>
 
         <div class="inner cover">
+          <% if flash.has?(:message) %>
+            <%= flash[:message] %>
+          <% end %>
           <%=yield%>  
         </div>
 

@@ -1,7 +1,5 @@
 <h1 class="page-header">Equipment<small> - <%= @user.items.size %> item<%= 's' if @user.items.size > 1 %></small></h1>
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
+
 <div class="pull-right"><a href="/equipment/new" class="btn btn-default">Add</a></div>
  <div class="clearfix"></div>
 
