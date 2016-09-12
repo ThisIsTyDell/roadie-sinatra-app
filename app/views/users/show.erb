@@ -3,14 +3,9 @@
 <h2>Trucks<small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 %>.</small></h2>
 <div class="container-fluid">
 <% @user.trucks.each do |truck| %>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <h3><a href="/trucks/<%= truck.id %>"><%= truck.name %></a></h3>
     <h4>Equipment <small> - <%= truck.items.size %></small></h4>
-    <ul>
-      <% truck.items.each do |item| %>
-        <li><%= item.name %>: $<%= item.value %></li>
-      <% end %>
-    </ul>
   </div>
 <% end %>
 </div>
