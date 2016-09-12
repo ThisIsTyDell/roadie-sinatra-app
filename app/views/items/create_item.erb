@@ -1,18 +1,31 @@
-<h1>Add Equipment</h1>
+<h1 class="page-header">Add Equipment</h1>
+
 <form method="POST" action="/equipment">
-  <label>Name:</label>
-  <input type="text" name="name">
-  <label>Value:</label>
-  <input type="number" name="value">
+  <div class="form-group col-md-6">
+    <label class="sr-only">Name</label>
+    <input type="text" name="name" class="form-control" placeholder="Name">
+  </div>
+  <div class="form-group col-md-6">
+    <label class="sr-only">Value (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+        <input type="number" name="value" class="form-control" placeholder="Value">
+        <div class="input-group-addon">.00</div>
+      </div>
+  </div>
   <h2>Select an Existing Truck or Create New Truck</h2>
-  <label>Select Existing Truck:</label>
-  <select name="truck">
-    <option value="">No, I want to Create New Truck</option>
-    <% current_user.trucks.each do |truck| %>
-      <option value="<%= truck.name %>"><%= truck.name %></option>
-    <% end %>
-  </select>
-  <label><b>or</b> Create New Truck:</label>
-  <input type="text" name="new_truck">
-  <input type="submit" value="Submit">
+  <div class="form-group col-md-6">
+    <label>Select Existing Truck:</label>
+    <select name="truck" class="form-control">
+      <option value="">No, I want to Create New Truck</option>
+      <% current_user.trucks.each do |truck| %>
+        <option value="<%= truck.name %>"><%= truck.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group col-md-6">
+    <label>Create New Truck:</label>
+    <input type="text" name="new_truck" class="form-control" placeholder="Skip if selecting existing">
+  </div>
+  <input type="submit" value="Submit" class="form-control">
 </form>
