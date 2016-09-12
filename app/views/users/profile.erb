@@ -1,4 +1,22 @@
 <h1 class="page-header">Profile Settings</h1>
 
-<p class="lead">You are currently managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1%>, with a total of <%= @user.items.size %>item<%= 's' if @user.items.size > 1%></p>
+<p class="lead">You are currently managing <%= current_user.trucks.size %> truck<%= 's' if current_user.trucks.size > 1%>, with a total of <%= current_user.items.size %> item<%= 's' if current_user.items.size > 1%></p>
 
+
+<form method="POST" action="/trucks/delete_all">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete All Trucks" class="form-control">
+</form>
+
+
+<form method="POST" action="/equipment/delete_all_items">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete All Equipment Items" class="form-control">
+</form>
+
+<h1 class="page-header">Delete Account</h1>
+
+<form method="POST" action="/profile/delete_account">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Account" class="form-control">
+</form>
