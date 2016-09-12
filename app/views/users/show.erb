@@ -1,10 +1,14 @@
 <h1>Welcome <%= @user.username %> to your equipment dashboard</h1>
 
 <h2>Trucks</h2>
+<div class="container-fluid">
 <% @user.trucks.each do |truck| %>
-  <h3><%= truck.name %></h3>
-  <h4>Equipment</h4>
-  <% truck.items.each do |item| %>
-    <%= item.name %>: $<%= item.value %>
-  <% end %>
+  <div class="col-md-4">
+    <h3><%= truck.name %></h3>
+    <h4>Equipment</h4>
+      <% truck.items.each do |item| %>
+      <%= item.name %>: $<%= item.value %>
+    <% end %>
+  </div>
 <% end %>
+</div>
