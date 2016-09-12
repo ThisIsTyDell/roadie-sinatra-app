@@ -30,7 +30,6 @@ class ItemController < ApplicationController
       #raise error message to user letting them know they can not choose existing and create new at same time. 
     when filled_in && params[:new_truck] == "" && params[:truck] != ""
       #create new item and associate with existing truck
-      binding.pry
       existing_truck = Truck.find_by_id(params[:truck])
       new_item = existing_truck.items.create(name: params[:name], value: params[:value])
       flash[:message] = "New item successfully created and placed in selected truck."
