@@ -1,8 +1,12 @@
-<h1><%= @item.name %></h1>
-Value: $<%= @item.value %>
-<p>This equipment is on <%= @item.truck.name %>'s Truck</p>
+<h1 class="page-header"><%= @item.name %></h1>
 
-<form method="POST" action="/equipment/<%= @item.id %>/delete">
+<p class="lead"><span class="pull-left">Value: $<%= @item.value %></span><span class="pull-right">This equipment is on <%= @item.truck.name %>'s Truck</span></p>
+<div class="clearfix"></div>
+
+<div class="pull-right">
+<a href="<%= @item.id %>/edit" class="btn btn-default">Edit</a>
+<form class="pull-right" method="POST" action="/equipment/<%= @item.id %>/delete">
   <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Equipment">
+  <input type="submit" value="Delete" class="btn btn-default">
 </form>
+</div>

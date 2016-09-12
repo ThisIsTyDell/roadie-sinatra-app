@@ -1,4 +1,4 @@
-<h1><%= @user.username.capitalize %>'s Trucks</h1>
+<h1 class="page-header"><%= @user.username.capitalize %>'s Trucks</h1>
 
 <% @user.trucks.each do |truck| %>
   <h2><%= truck.name %></h2>
