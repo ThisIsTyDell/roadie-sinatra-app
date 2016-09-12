@@ -21,12 +21,12 @@ class ItemController < ApplicationController
     filled_in = params[:name] != "" || params[:value] != ""
     case
     when !filled_in || (filled_in && params[:truck] == "" && params[:new_truck] == "")
-      redirect '/equipment/new'
       flash[:message] = "Please try again by filling out the details"
+      redirect '/equipment/new'
       #raise error message to user letting them know they need to fill out the form
     when filled_in && params[:truck] != "" && params[:new_truck] != ""
-      redirect '/equipment/new'
       flash[:message] = "Sorry, you can not choose existing truck and create new truck at the same time"
+      redirect '/equipment/new'
       #raise error message to user letting them know they can not choose existing and create new at same time. 
     when filled_in && params[:new_truck] == "" && params[:truck] != ""
       #create new item and associate with existing truck
