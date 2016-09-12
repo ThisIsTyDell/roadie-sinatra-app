@@ -1,13 +1,13 @@
 <div class="page-header"><h1><%= @user.username %><small> - You are managing <%= @user.trucks.size %> truck<%= 's' if @user.trucks.size > 1 || 0 %>.</small></h1></div>
 
-<h2>Trucks</h2>
+<h2 class="pull-left">Trucks</h2>
 <div class="pull-right"><a href="/trucks/new" class="btn btn-default">Add</a></div>
  <div class="clearfix"></div>
 <%= "<p>Looks like you don't have any trucks. Click Add to Add New Truck</p>" if @user.trucks.size == 0 %>
 <div class="container-fluid">
   
 <% @user.trucks.each do |truck| %>
-  <div class="col-md-6">
+  <div class="col-md-6 col-xs-6">
     <h3><a href="/trucks/<%= truck.id %>"><%= truck.name %></a></h3>
     <h4>Equipment <small> - <%= truck.items.size %></small></h4>
   </div>
