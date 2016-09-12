@@ -18,7 +18,7 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect '/dashboard'
+      redirect '/trucks'
     end
   end
 
@@ -26,7 +26,7 @@ class UserController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to '/dashboard'
+      redirect to '/trucks'
     else
       erb :'users/login'
     end
@@ -35,12 +35,6 @@ class UserController < ApplicationController
   get '/logout' do
     session.clear
     redirect to '/login'
-  end
-
-  get '/dashboard' do
-    @user = current_user
-
-    erb :'/users/show'
   end
   
 end
