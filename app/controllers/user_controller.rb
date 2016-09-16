@@ -11,7 +11,7 @@ class UserController < ApplicationController
       user = User.create(params)
       session[:user_id] = user.id
       flash[:message] = "Successfully Created Account"
-      redirect to '/'
+      redirect to '/trucks'
     end
   end
 
